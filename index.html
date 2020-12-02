@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nato Keyboard</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <article>
+    <div class="container">
+        
+        <img id="images" src="./img/cb.gif" alt="image">
+        
+        <div class="centered">
+            
+                <textarea id= "textInputArea" placeholder= "type something..." maxlength="18" autofocus ></textarea>
+            
+            <p id="words"></p>
+            
+        </div>
+
+        <keysound keys="0123456789abcdefghijklmnopqrstuvwxyz" audioplayer anycase src="./vo/${key}.mp3" id="sounds"/>
+        
+       
+    </div>
+
+    
+  
+    <div class="info">
+        
+        <span><b><dt>The NATO alphabet(est. 1956)</dt></b><br><dd> The universal phonetic alphabet is used for all military, civilian and amateur radio communications.
+        <br> <br>
+        It assigns a word to each letter so that a letter's name begins with the letter itself.<br>
+        Some well known examples include:</dd>  
+        <ul>
+        <li><em>Bravo Zulu</em> for "well done"</li><br> <li><em>Checkpoint Charlie</em> (Checkpoint C) in Berlin</li><br>   
+        <li><em>Zulu Time</em> for Greenwich Mean Time or Coordinated Universal Time.</li><br> 
+        <li>During the Vietnam War, the U.S. government referred to the Viet Cong as VC, or <em>Victor Charlie</em>; the name "Charlie" became synonymous with this force.</li><br><br> 
+        </ul>
+        </span>
+        <p id="letters"></p>
+        
+
+    </div>
+</article>
+    <script src="app.js"></script>
+</body>
+</html>
+
