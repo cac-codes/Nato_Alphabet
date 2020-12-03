@@ -465,7 +465,7 @@ document.getElementById('images').src=RadioImages[x];
 	var keyPressed = event.key;
 
 	document.getElementById("letters").innerHTML = 
-	"you pressed: " + keyPressed;
+	"YOU KEYED: " + keyPressed;
 
 	console.log(event.key);
 	console.log(event.code);
@@ -482,11 +482,7 @@ document.getElementById('images').src=RadioImages[x];
 	else {document.getElementById("words").innerHTML = 
 	event.key;
 }
-
-
 	///////////images////////////
-
-	
 
 	var idkImages = [
 		"./img/idk01.gif",
@@ -513,11 +509,6 @@ document.getElementById('images').src=RadioImages[x];
 	} 
 	else {document.getElementById('images').src= idkImages[y];
 }
-
-	
-
-	
-	
 
 });
 
