@@ -63,6 +63,76 @@ let letterArray = {
 	9: "NINE-ER",
 	0: "ZERO",
 	" ": "SPACE",
+	"-": "DASH",
+	".": "STOP",
+};
+
+let letterArrayCode = {
+	Keya: "ALFA",
+	Keyb: "BRAVO",
+	Keyc: "CHARLIE",
+	Keyd: "DELTA",
+	Keye: "ECHO",
+	Keyf: "FOXTROT",
+	Keyg: "GOLF",
+	Keyh: "HOTEL",
+	Keyi: "INDIA",
+	Keyj: "JULIETT",
+	Keyk: "KILO",
+	Keyl: "LIMA",
+	Keym: "MIKE",
+	Keyn: "NOVEMBER",
+	Keyo: "OSCAR",
+	Keyp: "PAPA",
+	Keyq: "QUEBEC",
+	Keyr: "ROMEO",
+	Keys: "SIERRA",
+	Keyt: "TANGO",
+	Keyu: "UNIFORM",
+	Keyv: "VICTOR",
+	Keyw: "WHISKEY",
+	Keyx: "X-RAY",
+	Keyy: "YANKEE",
+	Keyz: "ZULU",
+	KeyA: "ALFA",
+	KeyB: "BRAVO",
+	KeyC: "CHARLIE",
+	KeyD: "DELTA",
+	KeyE: "ECHO",
+	KeyF: "FOXTROT",
+	KeyG: "GOLF",
+	KeyH: "HOTEL",
+	KeyI: "INDIA",
+	KeyJ: "JULIETT",
+	KeyK: "KILO",
+	KeyL: "LIMA",
+	KeyM: "MIKE",
+	KeyN: "NOVEMBER",
+	KeyO: "OSCAR",
+	KeyP: "PAPA",
+	KeyQ: "QUEBEC",
+	KeyR: "ROMEO",
+	KeyS: "SIERRA",
+	KeyT: "TANGO",
+	KeyU: "UNIFORM",
+	KeyV: "VICTOR",
+	KeyW: "WHISKEY",
+	KeyX: "X-RAY",
+	KeyY: "YANKEE",
+	KeyZ: "ZULU",
+	Digit1: "ONE",
+	Digit2: "TWO",
+	Digit3: "THREE",
+	Digit4: "FOUR",
+	Digit5: "FIVE",
+	Digit6: "SIX",
+	Digit7: "SEVEN",
+	Digit8: "EIGHT",
+	Digit9: "NINE-ER",
+	Digit0: "ZERO",
+	Space: "SPACE",
+	Minus: "DASH",
+	Period: "STOP",
 };
 
 var RadioImages = [
@@ -403,9 +473,15 @@ document.getElementById('images').src=RadioImages[x];
 	/////////words/////////////
 
 	var keyPressed = event.key;
-
-	document.getElementById("words").innerHTML = 
-	letterArray[keyPressed]
+	var keyPressedcode = event.code;
+	
+	if (keyPressedcode in letterArrayCode){
+		document.getElementById("words").innerHTML = 
+		letterArray[keyPressed]
+	} 
+	else {document.getElementById("words").innerHTML = 
+	event.key;
+}
 
 
 	///////////images////////////
@@ -427,33 +503,83 @@ document.getElementById('images').src=RadioImages[x];
 
 	var y = Math.floor(size*Math.random())
 
+	var keyPressed = event.key;
 	
-	if (x in letterArray){
+	var keyPressedcode = event.code;
+	
+	if (keyPressedcode in letterArrayCode){
 		document.getElementById("images").src = 
-				src="./img/"+ x + ".gif";
-	} else  document.getElementById('images').src=idkImages[y];
-	
-	
-	
+				src="./img/" + (event.code) + ".gif"
+	} 
+	else {document.getElementById('images').src= idkImages[y];
+}
+
 	
 
 	
-				
-
-
-
-
-				
-				 
-	
-	////////page load focus on box ////////////
 	
 
 });
 
-
+////////page load focus on box ////////////
 	window.onload = function() {
 		var input = document.getElementById("textInputArea").focus();
-	  }
 
+////////page pre-load gifs ////////////	
+		var images = [];
+		function preloadGifs() {
+			for (var i = 0; i < arguments.length; i++) {
+				images[i] = new Image();
+				images[i].src = preloadGifs.arguments[i];
+			}
+		}	
+	  }
+	  preloadGifs(
+		"/img/KeyA.gif",
+		"/img/KeyB.gif",
+		"/img/KeyC.gif",
+		"/img/KeyD.gif",
+		"/img/KeyE.gif",
+		"/img/KeyF.gif",
+		"/img/KeyG.gif",
+		"/img/KeyH.gif",
+		"/img/KeyI.gif",
+		"/img/KeyJ.gif",
+		"/img/KeyK.gif",
+		"/img/KeyL.gif",
+		"/img/KeyM.gif",
+		"/img/KeyN.gif",
+		"/img/KeyO.gif",
+		"/img/KeyP.gif",
+		"/img/KeyQ.gif",
+		"/img/KeyR.gif",
+		"/img/KeyS.gif",
+		"/img/KeyT.gif",
+		"/img/KeyU.gif",
+		"/img/KeyV.gif",
+		"/img/KeyW.gif",
+		"/img/KeyX.gif",
+		"/img/KeyY.gif",
+		"/img/KeyZ.gif",
+		"/img/Digit0.gif",
+		"/img/Digit1.gif",
+		"/img/Digit2.gif",
+		"/img/Digit3.gif",
+		"/img/Digit4.gif",
+		"/img/Digit5.gif",
+		"/img/Digit6.gif",
+		"/img/Digit7.gif",
+		"/img/Digit8.gif",
+		"/img/Digit9.gif",
+		"/img/Space.gif",
+		"/img/Period.gif",
+		"/img/Minus.gif",
+		"/img/idk01.gif",
+		"/img/idk02.gif",
+		"/img/idk03.gif",
+		"/img/idk04.gif",
+		"/img/idk05.gif",
+	)
+
+	
 })();
